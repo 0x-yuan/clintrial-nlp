@@ -1,0 +1,21 @@
+# Core AI Frameworks
+phidata>=2.7.10
+google-generativeai>=0.8.5
+langchain>=0.3.27
+langchain-google-genai>=2.1.9
+langgraph>=0.6.4
+pyautogen>=0.10.0
+
+# Data Processing
+pandas>=2.0.0
+numpy>=1.21.0
+tqdm>=4.64.0
+
+# Environment & Utils
+python-dotenv>=1.0.0
+jupyter>=1.0.0
+ipykernel>=6.0.0
+
+# Optional: Enhanced functionality
+chromadb>=0.4.0  # For vector storage in Agno
+instructor>=1.0.0  # For structured outputs (if needed)

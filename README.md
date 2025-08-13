@@ -1,14 +1,14 @@
 # Clinical Trial NLP Agent Framework Baselines
 
-Comprehensive baselines for four major AI agent frameworks applied to clinical trial natural language inference (NLI).
+Comprehensive baselines for four major AI agent frameworks applied to clinical trial natural language inference (NLI). All frameworks are configured to use **Google Gemini 2.5 Flash** for optimal cost-performance balance.
 
 ## Overview
 
 This repository contains complete implementations of multi-agent systems for clinical trial NLP using:
-- **AutoGen** - Microsoft's multi-agent conversation framework
-- **Atomic Agents** - Lightweight, high-performance modular agents  
-- **Agno (Phidata)** - Full-stack agent platform with memory and knowledge
-- **LangChain/LangGraph** - Stateful graph-based agent workflows
+- **AutoGen** - Microsoft's multi-agent conversation framework (with Gemini integration)
+- **Atomic Agents** - Lightweight, high-performance modular agents (Google Generative AI)
+- **Agno (Phidata)** - Full-stack agent platform with memory and knowledge (Gemini native support)
+- **LangChain/LangGraph** - Stateful graph-based agent workflows (ChatGoogleGenerativeAI)
 
 ## Task Description
 
@@ -21,37 +21,41 @@ This repository contains complete implementations of multi-agent systems for cli
 ### Installation
 
 ```bash
-# Install with uv (recommended)
-uv pip install -r requirements.txt
+# Install required packages
+pip install phidata google-generativeai langchain langchain-google-genai langgraph pyautogen
 
-# Or with pip
-pip install -r requirements.txt
+# Or install all dependencies at once
+pip install phidata google-generativeai langchain langchain-google-genai langgraph pyautogen pandas jupyter tqdm python-dotenv
 ```
 
 ### Environment Setup
 
-Create `.env` file with your OpenAI API key:
+Create `.env` file with your Google Gemini API key:
 ```bash
-OPENAI_API_KEY=your_api_key_here
+GEMINI_API_KEY=your_gemini_api_key_here
 ```
+
+Get your API key from [Google AI Studio](https://ai.google.dev/gemini-api/docs/api-key).
 
 ### Run a Baseline
 
 Choose any framework and run the corresponding notebook:
 
 ```bash
-# AutoGen - Multi-agent conversations
+# AutoGen - Multi-agent conversations (with Gemini)
 jupyter notebook autogen_baseline.ipynb
 
-# Atomic Agents - Lightweight & fast
+# Atomic Agents - Lightweight & fast (Google Generative AI)
 jupyter notebook atomic_agents_baseline.ipynb  
 
-# Agno - Full-stack with memory
+# Agno - Full-stack with memory (Gemini 2.5 Flash)
 jupyter notebook agno_baseline.ipynb
 
-# LangChain - Stateful workflows
+# LangChain - Stateful workflows (ChatGoogleGenerativeAI)
 jupyter notebook langchain_baseline.ipynb
 ```
+
+All notebooks are pre-configured to use **Google Gemini 2.5 Flash** for optimal performance and cost efficiency.
 
 ## Framework Comparison
 
@@ -167,7 +171,7 @@ Target performance levels:
 ## Troubleshooting
 
 **Common Issues:**
-- Missing API key → Check `.env` file
+- Missing API key → Check `.env` file for `GEMINI_API_KEY`
 - Import errors → Run `uv pip install -r requirements.txt`
 - Memory issues → Reduce sample sizes in notebooks
 - Slow execution → Use `--sample-size` parameter
@@ -175,8 +179,9 @@ Target performance levels:
 **Performance Tips:**
 - Use `uv` for faster package management
 - Set appropriate sample sizes for testing
-- Monitor token usage with OpenAI API
+- Monitor token usage with Google AI Studio
 - Leverage caching where available
+- Gemini 2.5 Flash offers 22% efficiency improvements over previous models
 
 ## Contributing
 
